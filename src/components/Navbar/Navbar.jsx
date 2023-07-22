@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav>
       <div>
-        <div className="relative flex h-16 items-center justify-between">
+        <div className="mx-auto px-2 sm:px-6 lg:px-10 bg-blue-400 relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* <!-- Mobile menu button--> */}
             <button
@@ -60,7 +60,7 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start mt-5">
+          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
               <h1 className="block h-8 w-auto lg:hidden rounded-full">
                 CollegeBooker
@@ -74,16 +74,6 @@ const Navbar = () => {
             </div>
             <div className="hidden sm:ml-auto sm:block">
               <ul className="flex space-x-6">
-                <li>
-                  <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                      isActive ? "current" : "default"
-                    }
-                  >
-                    Home
-                  </NavLink>
-                </li>
                 <li>
                   <NavLink
                     to="/college"
@@ -114,6 +104,21 @@ const Navbar = () => {
                     My College
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    to="/login"
+                    className={({ isActive }) =>
+                      isActive ? "current" : "default"
+                    }
+                  >
+                    Login
+                  </NavLink>
+                </li>
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src="" />
+                  </div>
+                </label>
               </ul>
             </div>
           </div>
@@ -124,14 +129,6 @@ const Navbar = () => {
       <div className="sm:hidden" id="mobile-menu">
         {isMenuOpen && (
           <ul className="space-y-1 px-2 pb-3 pt-2">
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) => (isActive ? "current" : "default")}
-              >
-                Home
-              </NavLink>
-            </li>
             <li>
               <NavLink
                 to="/college"
@@ -156,6 +153,19 @@ const Navbar = () => {
                 My College
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/login"
+                className={({ isActive }) => (isActive ? "current" : "default")}
+              >
+                Login
+              </NavLink>
+            </li>
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src="" />
+              </div>
+            </label>
           </ul>
         )}
       </div>

@@ -7,7 +7,7 @@ const Main = () => {
   const headerFooterLess =
     location.pathname.includes("login") || location.pathname.includes("signUp");
   return (
-    <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div className="">
       {!headerFooterLess && <Navbar></Navbar>}
       <div className="min-h-[calc(100vh-100px)]">
         <Outlet></Outlet>
