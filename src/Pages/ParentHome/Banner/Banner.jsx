@@ -5,7 +5,7 @@ import { FaTrophy, FaUniversity } from "react-icons/fa";
 import { FaTableCells } from "react-icons/fa6";
 const Banner = () => {
   return (
-    <div className="text-center relative">
+    <div className="text-center">
       <Carousel showThumbs={false} showIndicators={false}>
         <div className="relative">
           <img src={`https://i.ibb.co/Wx5cFCz/1.jpg`} alt="" />
@@ -131,7 +131,6 @@ const Banner = () => {
           </div>
         </div>
       </Carousel>
-      <div></div>
     </div>
   );
 };
