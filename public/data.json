@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "collegeName": "Example College 1",
+    "collegeImage": "https://i.ibb.co/Xk5mMkX/1.jpg",
+    "ratings": 4.5,
+    "admissionDate": "2023-08-10 to 2023-10-16",
+    "admissionProcess": "Admission process details for Example College 1",
+    "events": [
+      {
+        "eventName": "Event 1",
+        "eventDate": "2023-08-15",
+        "description": "Event 1 description"
+      },
+      {
+        "eventName": "Event 2",
+        "eventDate": "2023-09-10",
+        "description": "Event 2 description"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Research Work 1",
+        "authors": "Author 1, Author 2",
+        "publishedDate": "2023-07-01",
+        "abstract": "Abstract of Research Work 1"
+      },
+      {
+        "title": "Research Work 2",
+        "authors": "Author 3, Author 4",
+        "publishedDate": "2023-08-20",
+        "abstract": "Abstract of Research Work 2"
+      }
+    ],
+    "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]
+  },
+  {
+    "id": 2,
+    "collegeName": "Example College 2",
+    "collegeImage": "https://i.ibb.co/PGqmFK2/2.jpg",
+    "ratings": 4.3,
+    "admissionDate": "2023-08-12 to 2023-10-16",
+    "admissionProcess": "Admission process details for Example College 1",
+    "events": [
+      {
+        "eventName": "Event 1",
+        "eventDate": "2023-08-15",
+        "description": "Event 1 description"
+      },
+      {
+        "eventName": "Event 2",
+        "eventDate": "2023-09-10",
+        "description": "Event 2 description"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Research Work 1",
+        "authors": "Author 1, Author 2",
+        "publishedDate": "2023-07-01",
+        "abstract": "Abstract of Research Work 1"
+      },
+      {
+        "title": "Research Work 2",
+        "authors": "Author 3, Author 4",
+        "publishedDate": "2023-08-20",
+        "abstract": "Abstract of Research Work 2"
+      }
+    ],
+    "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]
+  },
+  {
+    "id": 3,
+    "collegeName": "Example College 3",
+    "collegeImage": "https://i.ibb.co/W6Z9tBC/3.jpg",
+    "ratings": 4.7,
+    "admissionDate": "2023-08-13 to 2023-10-16",
+    "admissionProcess": "Admission process details for Example College 1",
+    "events": [
+      {
+        "eventName": "Event 1",
+        "eventDate": "2023-08-15",
+        "description": "Event 1 description"
+      },
+      {
+        "eventName": "Event 2",
+        "eventDate": "2023-09-10",
+        "description": "Event 2 description"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Research Work 1",
+        "authors": "Author 1, Author 2",
+        "publishedDate": "2023-07-01",
+        "abstract": "Abstract of Research Work 1"
+      },
+      {
+        "title": "Research Work 2",
+        "authors": "Author 3, Author 4",
+        "publishedDate": "2023-08-20",
+        "abstract": "Abstract of Research Work 2"
+      }
+    ],
+    "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]
+  },
+  {
+    "id": 4,
+    "collegeName": "Example College 4",
+    "collegeImage": "https://i.ibb.co/VBwNpG6/4.jpg",
+    "ratings": 4.6,
+    "admissionDate": "2023-08-14 to 2023-10-16",
+    "admissionProcess": "Admission process details for Example College 1",
+    "events": [
+      {
+        "eventName": "Event 1",
+        "eventDate": "2023-08-15",
+        "description": "Event 1 description"
+      },
+      {
+        "eventName": "Event 2",
+        "eventDate": "2023-09-10",
+        "description": "Event 2 description"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Research Work 1",
+        "authors": "Author 1, Author 2",
+        "publishedDate": "2023-07-01",
+        "abstract": "Abstract of Research Work 1"
+      },
+      {
+        "title": "Research Work 2",
+        "authors": "Author 3, Author 4",
+        "publishedDate": "2023-08-20",
+        "abstract": "Abstract of Research Work 2"
+      }
+    ],
+    "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]
+  },
+  {
+    "id": 5,
+    "collegeName": "Example College 5",
+    "collegeImage": "https://i.ibb.co/4KHGNds/5.jpg",
+    "ratings": 4.3,
+    "admissionDate": "2023-08-15 to 2023-10-16",
+    "admissionProcess": "Admission process details for Example College 1",
+    "events": [
+      {
+        "eventName": "Event 1",
+        "eventDate": "2023-08-15",
+        "description": "Event 1 description"
+      },
+      {
+        "eventName": "Event 2",
+        "eventDate": "2023-09-10",
+        "description": "Event 2 description"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Research Work 1",
+        "authors": "Author 1, Author 2",
+        "publishedDate": "2023-07-01",
+        "abstract": "Abstract of Research Work 1"
+      },
+      {
+        "title": "Research Work 2",
+        "authors": "Author 3, Author 4",
+        "publishedDate": "2023-08-20",
+        "abstract": "Abstract of Research Work 2"
+      }
+    ],
+    "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]
+  },
+  {
+    "id": 6,
+    "collegeName": "Example College 6",
+    "collegeImage": "https://i.ibb.co/Mg6VxZK/6.jpg",
+    "ratings": 4.4,
+    "admissionDate": "2023-08-16 to 2023-10-16",
+    "admissionProcess": "Admission process details for Example College 1",
+    "events": [
+      {
+        "eventName": "Event 1",
+        "eventDate": "2023-08-15",
+        "description": "Event 1 description"
+      },
+      {
+        "eventName": "Event 2",
+        "eventDate": "2023-09-10",
+        "description": "Event 2 description"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Research Work 1",
+        "authors": "Author 1, Author 2",
+        "publishedDate": "2023-07-01",
+        "abstract": "Abstract of Research Work 1"
+      },
+      {
+        "title": "Research Work 2",
+        "authors": "Author 3, Author 4",
+        "publishedDate": "2023-08-20",
+        "abstract": "Abstract of Research Work 2"
+      }
+    ],
+    "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]
+  }
+]

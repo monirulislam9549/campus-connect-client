@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleNavbar = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
   };
   return (
     <nav>
@@ -105,23 +113,40 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    to="/login"
-                    className={({ isActive }) =>
-                      isActive ? "current" : "default"
-                    }
-                  >
-                    Login
-                  </NavLink>
+                  {user ? (
+                    <>
+                      <NavLink
+                        className={({ isActive }) =>
+                          isActive ? "current" : "default"
+                        }
+                        onClick={handleLogOut}
+                      >
+                        Log Out
+                      </NavLink>
+                    </>
+                  ) : (
+                    <>
+                      <NavLink
+                        to="/login"
+                        className={({ isActive }) =>
+                          isActive ? "current" : "default"
+                        }
+                      >
+                        Login
+                      </NavLink>
+                    </>
+                  )}
                 </li>
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  <div className="w-10 rounded-full">
-                    <img src="" />
-                  </div>
-                </label>
               </ul>
             </div>
           </div>
+          <Link className="flex justify-center items-center ml-6">
+            <img
+              className="h-12 w-12 rounded-full ring-2 ring-white"
+              src={user?.photoURL}
+            />
+            <p className="ml-2 font-medium">{user?.displayName}</p>
+          </Link>
         </div>
       </div>
 

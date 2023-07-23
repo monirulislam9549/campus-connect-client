@@ -1,16 +1,26 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { FaEye, FaEyeSlash, FaFacebookF, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  // TwitterAuthProvider,
+  getAuth,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { app } from "../../firebase/firebase.config";
 
+const auth = getAuth(app);
 const Login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password, setPassword] = useState("");
   const { signIn, socialUser } = useContext(AuthContext);
-
+  const emailRef = useRef();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -33,10 +43,12 @@ const Login = () => {
 
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
+  // const twitterProvider = new TwitterAuthProvider();
 
   const handleGoogleSignIn = () => {
     socialUser(googleProvider)
       .then((result) => {
+        // navigate("/");
         const loggedUser = result.user;
         console.log(loggedUser);
       })
@@ -46,11 +58,21 @@ const Login = () => {
   const handleGithubSignIn = () => {
     socialUser(githubProvider)
       .then((result) => {
+        navigate("/");
         const loggedUser = result.user;
         console.log(loggedUser);
       })
       .catch((error) => console.log(error));
   };
+
+  // const handleTwitterSignIn = () => {
+  //   socialUser(twitterProvider)
+  //     .then((result) => {
+  //       const loggedUser = result.user;
+  //       console.log(loggedUser);
+  //     })
+  //     .catch((error) => console.log(error));
+  // };
 
   const handleTogglePassword = () => {
     setPasswordVisible(!passwordVisible);
@@ -58,6 +80,19 @@ const Login = () => {
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+  };
+
+  const handleResetPassword = () => {
+    const email = emailRef.current.value;
+    console.log(email);
+    if (!email) {
+      toast.warn("Please provide your email address to reset");
+    }
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        toast.info("Please check your email address");
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -107,7 +142,8 @@ const Login = () => {
             </p>
           </button>
           <button
-            aria-label="Continue with twitter"
+            // onClick={handleTwitterSignIn}
+            aria-label="Continue with Facebook"
             role="button"
             className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4 hover:bg-blue-400"
           >
@@ -133,8 +169,9 @@ const Login = () => {
                 Email
               </label>
               <input
+                ref={emailRef}
                 {...register("email", { required: true })}
-                type="text"
+                type="email"
                 className="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
               />
               {errors.email && (
@@ -187,8 +224,12 @@ const Login = () => {
               </button>
             </div>
           </form>
+          <button onClick={handleResetPassword} className="underline mt-3">
+            Forget Password
+          </button>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

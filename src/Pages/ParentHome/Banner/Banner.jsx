@@ -6,7 +6,13 @@ import { FaTableCells } from "react-icons/fa6";
 const Banner = () => {
   return (
     <div className="text-center">
-      <Carousel showThumbs={false} showIndicators={false}>
+      <Carousel
+        showThumbs={false}
+        showIndicators={false}
+        autoPlay={true}
+        interval={1500}
+        infiniteLoop={true}
+      >
         <div className="relative">
           <img src={`https://i.ibb.co/Wx5cFCz/1.jpg`} alt="" />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white bg-opacity-80 p-2 space-y-5">
