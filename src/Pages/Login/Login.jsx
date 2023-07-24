@@ -48,9 +48,17 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     socialUser(googleProvider)
       .then((result) => {
-        // navigate("/");
         const loggedUser = result.user;
-        console.log(loggedUser);
+        const saveUser = {
+          name: loggedUser.displayName,
+          email: loggedUser.email,
+          photo: loggedUser.photoURL,
+        };
+        fetch("http://localhost:5000/users", saveUser)
+          .then((res) => res.json())
+          .then(() => {
+            navigate(from, { replace: true });
+          });
       })
       .catch((error) => console.log(error));
   };
@@ -58,7 +66,7 @@ const Login = () => {
   const handleGithubSignIn = () => {
     socialUser(githubProvider)
       .then((result) => {
-        navigate("/");
+        navigate(from, { replace: true });
         const loggedUser = result.user;
         console.log(loggedUser);
       })

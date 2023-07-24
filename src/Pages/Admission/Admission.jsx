@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const subjects = [
   "Physics",
@@ -24,8 +26,8 @@ const Admission = () => {
   const { user } = useContext(AuthContext);
   const [selectCategory, setSelectCategory] = useState("");
   const [selectCollege, setSelectCollege] = useState("");
-  const { register, handleSubmit } = useForm();
-
+  const { register, handleSubmit, reset } = useForm();
+  let timerInterval;
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
   const handleSelectChange = (event) => {
@@ -57,14 +59,47 @@ const Admission = () => {
             college,
             date: new Date(date),
           };
-          console.log(studentInfo);
+          // console.log(studentInfo);
+          axios
+            .post("http://localhost:5000/admission", studentInfo)
+            .then((data) => {
+              if (data.data.insertedId) {
+                reset();
+                Swal.fire({
+                  title: "Auto close alert!",
+                  html: "Submitted in <b></b> milliseconds.",
+                  timer: 2000,
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading();
+                    const b = Swal.getHtmlContainer().querySelector("b");
+                    timerInterval = setInterval(() => {
+                      b.textContent = Swal.getTimerLeft();
+                    }, 100);
+                  },
+                  willClose: () => {
+                    clearInterval(timerInterval);
+                  },
+                });
+              }
+              console.log(data.data.insertedId);
+            });
         }
       });
   };
   return (
     <div>
       <div className="grid grid-cols-2  gap-4 mx-20 my-10">
-        <div className="bg-[#1f4363]">1</div>
+        <div className="bg-[#1f4363] text-white p-10">
+          <h1 className=" text-4xl font-bold">REQUEST AN ADMISSION</h1>
+          <p>
+            Fusce purus mauris, blandit vitae purus eget, viverra volutpat nibh.
+            Nam in elementum nisi, a placerat nisi. Quisque ullamcorper magna in
+            odio rhoncus semper.Sed nec ultricies velit. Aliquam non massa id
+            enim ultrices aliquet a ac tortor. Pellentesque habitant morbi
+            tristique senectus et netus et malesuada fames ac turpis egestas.
+          </p>
+        </div>
         <div className="bg-[#ebebeb]">
           <div className="max-w-2xl mx-auto bg-white p-16">
             <form onSubmit={handleSubmit(onSubmit)}>

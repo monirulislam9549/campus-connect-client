@@ -70,12 +70,12 @@ const Navbar = () => {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <h1 className="block h-8 w-auto lg:hidden rounded-full">
+              <h1 className="block h-8 w-auto  lg:hidden rounded-full">
                 CollegeBooker
               </h1>
 
               <Link>
-                <h1 className="hidden h-8 w-auto lg:block rounded-full">
+                <h1 className="text-2xl h-8 w-auto lg:block rounded-full">
                   CollegeBooker
                 </h1>
               </Link>
