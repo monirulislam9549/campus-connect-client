@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "collegeName": "Example College 1",
     "collegeImage": "https://i.ibb.co/Xk5mMkX/1.jpg",
     "ratings": 4.5,
@@ -9,33 +8,32 @@
     "events": [
       {
         "eventName": "Event 1",
-        "eventDate": "2023-08-15",
-        "description": "Event 1 description"
+        "eventImg": "https://i.ibb.co/3m9KnQG/event1.jpg",
+        "eventDescription": "Event 1 description"
       },
       {
         "eventName": "Event 2",
-        "eventDate": "2023-09-10",
-        "description": "Event 2 description"
+        "eventImg": "https://i.ibb.co/ZxpHbpr/event2.jpg",
+        "eventDescription": "Event 1 description"
+      },
+      {
+        "eventName": "Event 3",
+        "eventImg": "https://i.ibb.co/1vsRDx1/event4.jpg",
+        "eventDescription": "Event 1 description"
       }
     ],
     "researchWorks": [
       {
-        "title": "Research Work 1",
-        "authors": "Author 1, Author 2",
+        "title": "Environmental Factors and Biological Systems: Understanding Biodiversity, Adaptation, and Conservation in the Face of Global Challenges",
+        "authors": "Jonathon Prince",
         "publishedDate": "2023-07-01",
-        "abstract": "Abstract of Research Work 1"
-      },
-      {
-        "title": "Research Work 2",
-        "authors": "Author 3, Author 4",
-        "publishedDate": "2023-08-20",
-        "abstract": "Abstract of Research Work 2"
+        "abstract": "The research explores the intricate relationship between environmental factors and biological systems. It delves into the impact of climate change, pollution, and habitat loss on biodiversity. The study also examines the adaptive mechanisms of organisms and the implications for human health. Advanced technologies for monitoring and conservation are discussed. Overall, the research emphasizes the need for global cooperation in addressing environmental challenges and promoting sustainable practices for a harmonious coexistence of all life.",
+        "authorImg": "https://i.ibb.co/fFd5byC/Ellipse-2-3.png"
       }
     ],
     "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]
   },
   {
-    "id": 2,
     "collegeName": "Example College 2",
     "collegeImage": "https://i.ibb.co/PGqmFK2/2.jpg",
     "ratings": 4.3,
@@ -44,33 +42,32 @@
     "events": [
       {
         "eventName": "Event 1",
-        "eventDate": "2023-08-15",
-        "description": "Event 1 description"
+        "eventImg": "https://i.ibb.co/3m9KnQG/event1.jpg",
+        "eventDescription": "Event 1 description"
       },
       {
         "eventName": "Event 2",
-        "eventDate": "2023-09-10",
-        "description": "Event 2 description"
+        "eventImg": "https://i.ibb.co/ZxpHbpr/event2.jpg",
+        "eventDescription": "Event 1 description"
+      },
+      {
+        "eventName": "Event 3",
+        "eventImg": "https://i.ibb.co/F3M1zk0/event6.jpg",
+        "eventDescription": "Event 1 description"
       }
     ],
     "researchWorks": [
       {
-        "title": "Research Work 1",
-        "authors": "Author 1, Author 2",
+        "title": "Exploring the Foundations and Diverse Applications of Chemistry: Catalysts, Sustainable Processes, and Analytical Insights",
+        "authors": "Jonathon Prince",
         "publishedDate": "2023-07-01",
-        "abstract": "Abstract of Research Work 1"
-      },
-      {
-        "title": "Research Work 2",
-        "authors": "Author 3, Author 4",
-        "publishedDate": "2023-08-20",
-        "abstract": "Abstract of Research Work 2"
+        "abstract": "The research focuses on various aspects of chemistry, including fundamental chemical principles, reactions, and properties of elements and compounds. It explores the applications of chemistry in various industries such as pharmaceuticals, materials, and energy. Special attention is given to the development of novel catalysts and environmentally friendly processes. The study also highlights the importance of chemical analysis and its role in understanding complex systems. Overall, the research contributes to advancing our knowledge of chemistry and its vital role in shaping the modern world across multiple disciplines.",
+        "authorImg": "https://i.ibb.co/fFd5byC/Ellipse-2-3.png"
       }
     ],
     "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]
   },
   {
-    "id": 3,
     "collegeName": "Example College 3",
     "collegeImage": "https://i.ibb.co/W6Z9tBC/3.jpg",
     "ratings": 4.7,
@@ -79,33 +76,32 @@
     "events": [
       {
         "eventName": "Event 1",
-        "eventDate": "2023-08-15",
-        "description": "Event 1 description"
+        "eventImg": "https://i.ibb.co/3m9KnQG/event1.jpg",
+        "eventDescription": "Event 1 description"
       },
       {
         "eventName": "Event 2",
-        "eventDate": "2023-09-10",
-        "description": "Event 2 description"
+        "eventImg": "https://i.ibb.co/ZxpHbpr/event2.jpg",
+        "eventDescription": "Event 1 description"
+      },
+      {
+        "eventName": "Event 3",
+        "eventImg": "https://i.ibb.co/YRSZWV3/event5.jpg",
+        "eventDescription": "Event 1 description"
       }
     ],
     "researchWorks": [
       {
-        "title": "Research Work 1",
-        "authors": "Author 1, Author 2",
+        "title": "Nanotechnology in Drug Delivery: Transformative Strategies for Enhanced Therapeutic Outcomes in Medicine",
+        "authors": "Jonathon Prince",
         "publishedDate": "2023-07-01",
-        "abstract": "Abstract of Research Work 1"
-      },
-      {
-        "title": "Research Work 2",
-        "authors": "Author 3, Author 4",
-        "publishedDate": "2023-08-20",
-        "abstract": "Abstract of Research Work 2"
+        "abstract": "This research explores the transformative potential of nanotechnology in revolutionizing drug delivery systems for enhanced therapeutic outcomes in various medical applications. Nanoscale materials and structures have shown remarkable promise in improving drug solubility, bioavailability, and targeted delivery to specific tissues or cells, thereby reducing side effects and increasing treatment efficacy.",
+        "authorImg": "https://i.ibb.co/fFd5byC/Ellipse-2-3.png"
       }
     ],
     "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]
   },
   {
-    "id": 4,
     "collegeName": "Example College 4",
     "collegeImage": "https://i.ibb.co/VBwNpG6/4.jpg",
     "ratings": 4.6,
@@ -114,33 +110,32 @@
     "events": [
       {
         "eventName": "Event 1",
-        "eventDate": "2023-08-15",
-        "description": "Event 1 description"
+        "eventImg": "https://i.ibb.co/3m9KnQG/event1.jpg",
+        "eventDescription": "Event 1 description"
       },
       {
         "eventName": "Event 2",
-        "eventDate": "2023-09-10",
-        "description": "Event 2 description"
+        "eventImg": "https://i.ibb.co/ZxpHbpr/event2.jpg",
+        "eventDescription": "Event 1 description"
+      },
+      {
+        "eventName": "Event 3",
+        "eventImg": "https://i.ibb.co/F3M1zk0/event6.jpg",
+        "eventDescription": "Event 1 description"
       }
     ],
     "researchWorks": [
       {
-        "title": "Research Work 1",
-        "authors": "Author 1, Author 2",
+        "title": "Environmental Factors and Biological Systems: Understanding Biodiversity, Adaptation, and Conservation in the Face of Global Challenges",
+        "authors": "Jonathon Prince",
         "publishedDate": "2023-07-01",
-        "abstract": "Abstract of Research Work 1"
-      },
-      {
-        "title": "Research Work 2",
-        "authors": "Author 3, Author 4",
-        "publishedDate": "2023-08-20",
-        "abstract": "Abstract of Research Work 2"
+        "abstract": "The research explores the intricate relationship between environmental factors and biological systems. It delves into the impact of climate change, pollution, and habitat loss on biodiversity. The study also examines the adaptive mechanisms of organisms and the implications for human health. Advanced technologies for monitoring and conservation are discussed. Overall, the research emphasizes the need for global cooperation in addressing environmental challenges and promoting sustainable practices for a harmonious coexistence of all life.",
+        "authorImg": "https://i.ibb.co/fFd5byC/Ellipse-2-3.png"
       }
     ],
     "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]
   },
   {
-    "id": 5,
     "collegeName": "Example College 5",
     "collegeImage": "https://i.ibb.co/4KHGNds/5.jpg",
     "ratings": 4.3,
@@ -149,33 +144,32 @@
     "events": [
       {
         "eventName": "Event 1",
-        "eventDate": "2023-08-15",
-        "description": "Event 1 description"
+        "eventImg": "https://i.ibb.co/1vsRDx1/event4.jpg",
+        "eventDescription": "Event 1 description"
       },
       {
         "eventName": "Event 2",
-        "eventDate": "2023-09-10",
-        "description": "Event 2 description"
+        "eventImg": "https://i.ibb.co/YRSZWV3/event5.jpg",
+        "eventDescription": "Event 1 description"
+      },
+      {
+        "eventName": "Event 3",
+        "eventImg": "https://i.ibb.co/F3M1zk0/event6.jpg",
+        "eventDescription": "Event 1 description"
       }
     ],
     "researchWorks": [
       {
-        "title": "Research Work 1",
-        "authors": "Author 1, Author 2",
+        "title": "Exploring the Foundations and Diverse Applications of Chemistry: Catalysts, Sustainable Processes, and Analytical Insights",
+        "authors": "Jonathon Prince",
         "publishedDate": "2023-07-01",
-        "abstract": "Abstract of Research Work 1"
-      },
-      {
-        "title": "Research Work 2",
-        "authors": "Author 3, Author 4",
-        "publishedDate": "2023-08-20",
-        "abstract": "Abstract of Research Work 2"
+        "abstract": "The research focuses on various aspects of chemistry, including fundamental chemical principles, reactions, and properties of elements and compounds. It explores the applications of chemistry in various industries such as pharmaceuticals, materials, and energy. Special attention is given to the development of novel catalysts and environmentally friendly processes. The study also highlights the importance of chemical analysis and its role in understanding complex systems. Overall, the research contributes to advancing our knowledge of chemistry and its vital role in shaping the modern world across multiple disciplines.",
+        "authorImg": "https://i.ibb.co/fFd5byC/Ellipse-2-3.png"
       }
     ],
     "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]
   },
   {
-    "id": 6,
     "collegeName": "Example College 6",
     "collegeImage": "https://i.ibb.co/Mg6VxZK/6.jpg",
     "ratings": 4.4,
@@ -184,27 +178,27 @@
     "events": [
       {
         "eventName": "Event 1",
-        "eventDate": "2023-08-15",
-        "description": "Event 1 description"
+        "eventImg": "https://i.ibb.co/3m9KnQG/event1.jpg",
+        "eventDescription": "Event 1 description"
       },
       {
         "eventName": "Event 2",
-        "eventDate": "2023-09-10",
-        "description": "Event 2 description"
+        "eventImg": "https://i.ibb.co/ZxpHbpr/event2.jpg",
+        "eventDescription": "Event 1 description"
+      },
+      {
+        "eventName": "Event 3",
+        "eventImg": "https://i.ibb.co/F3M1zk0/event6.jpg",
+        "eventDescription": "Event 1 description"
       }
     ],
     "researchWorks": [
       {
-        "title": "Research Work 1",
-        "authors": "Author 1, Author 2",
+        "title": "Nanotechnology in Drug Delivery: Transformative Strategies for Enhanced Therapeutic Outcomes in Medicine",
+        "authors": "Jonathon Prince",
         "publishedDate": "2023-07-01",
-        "abstract": "Abstract of Research Work 1"
-      },
-      {
-        "title": "Research Work 2",
-        "authors": "Author 3, Author 4",
-        "publishedDate": "2023-08-20",
-        "abstract": "Abstract of Research Work 2"
+        "abstract": "This research explores the transformative potential of nanotechnology in revolutionizing drug delivery systems for enhanced therapeutic outcomes in various medical applications. Nanoscale materials and structures have shown remarkable promise in improving drug solubility, bioavailability, and targeted delivery to specific tissues or cells, thereby reducing side effects and increasing treatment efficacy.",
+        "authorImg": "https://i.ibb.co/fFd5byC/Ellipse-2-3.png"
       }
     ],
     "sportsCategories": ["Football", "Basketball", "Volleyball", "Cricket"]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Unveiling Bias: Exploring the Impact of Selection Bias on College Internships and Scholarships",
+    "publicationDate": "2023-07-01",
+    "abstract": "This research delves into the pervasive issue of selection bias in the allocation of college internships and scholarships, and its potential consequences for educational and career opportunities. The study aims to shed light on the underlying factors contributing to bias and its impact on students' academic journeys.",
+    "link": "https://pubsonline.informs.org/journal/mnsc",
+    "category": "Business",
+    "authorImg": "https://i.ibb.co/hywMQPq/Ellipse-2-2.png"
+  },
+  {
+    "id": 2,
+    "title": "Navigating the Challenges of Reverse Discrimination in Post-College Employment",
+    "publicationDate": "2023-07-15",
+    "abstract": "Reverse discrimination, a phenomenon where members of historically privileged groups experience discrimination in favor of historically disadvantaged groups, has become a contentious issue in post-college employment settings. This research investigates the complexities and implications of reverse discrimination and its impact on the job market.",
+    "link": "https://pubsonline.informs.org/journal/mnsc",
+    "category": "Discrimination",
+    "authorImg": "https://i.ibb.co/hywMQPq/Ellipse-2-2.png"
+  },
+  {
+    "id": 3,
+    "title": "Advancing Multicultural Education: A Call for Deeper Implementation",
+    "publicationDate": "2023-08-02",
+    "abstract": "Multicultural education is a vital approach that recognizes the diverse cultural backgrounds and identities of students and seeks to promote understanding, respect, and inclusion within educational settings. This research explores the significance of implementing multicultural education concepts at a greater depth in schools and educational institutions.",
+    "link": "https://pubsonline.informs.org/journal/mnsc",
+    "category": "Education",
+    "authorImg": "https://i.ibb.co/hywMQPq/Ellipse-2-2.png"
+  },
+  {
+    "id": 4,
+    "title": "Addressing Drug and Alcohol Abuse on College Campuses: Challenges and Interventions",
+    "publicationDate": "2023-07-01",
+    "abstract": "This research focuses on the prevalent issue of drug and alcohol abuse among college students and explores the challenges faced by educational institutions in addressing this complex problem. The study examines the factors contributing to substance abuse on college campuses, including peer pressure, stress, academic demands, and social influences.",
+    "link": "https://pubsonline.informs.org/journal/mnsc",
+    "category": "Addiction",
+    "authorImg": "https://i.ibb.co/hywMQPq/Ellipse-2-2.png"
+  },
+  {
+    "id": 5,
+    "title": "The Impact of Social Media on Students' Information Seeking and Learning",
+    "publicationDate": "2023-07-15",
+    "abstract": "This research explores the influence of social media platforms on students' ability to find appropriate information and enhance their learning experiences. The study investigates the advantages and disadvantages of utilizing social media as an information source and educational tool.",
+    "link": "https://pubsonline.informs.org/journal/mnsc",
+    "category": "Media",
+    "authorImg": "https://i.ibb.co/hywMQPq/Ellipse-2-2.png"
+  },
+  {
+    "id": 6,
+    "title": "Addressing Psychological Disorders: Support Groups in Modern Colleges",
+    "publicationDate": "2023-08-02",
+    "abstract": "This research focuses on the prevalence and impact of psychological disorders among college students and explores the role of support groups in providing mental health assistance. The study examines the various psychological disorders commonly experienced by college students, such as anxiety, depression, and stress-related conditions. It delves into the challenges these disorders pose to academic performance, overall well-being, and social interactions.",
+    "link": "https://pubsonline.informs.org/journal/mnsc",
+    "category": "Psychology",
+    "authorImg": "https://i.ibb.co/hywMQPq/Ellipse-2-2.png"
+  }
+]

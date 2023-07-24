@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 import SingleCard from "../../../components/SingleCard/SingleCard";
 
-const CollegeCard = () => {
+const CollegeCard = ({ cardToShow }) => {
   const [cards, setCard] = useState([]);
   useEffect(() => {
-    fetch("data.json")
+    fetch("http://localhost:5000/colleges")
       .then((res) => res.json())
       .then((data) => {
         setCard(data);
@@ -24,8 +24,8 @@ const CollegeCard = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {cards.map((card) => (
-          <SingleCard key={card.id} card={card}></SingleCard>
+        {cards.slice(0, cardToShow).map((card) => (
+          <SingleCard key={card._id} card={card}></SingleCard>
         ))}
       </div>
     </div>
