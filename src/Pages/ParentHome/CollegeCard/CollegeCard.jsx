@@ -1,16 +1,21 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SingleCard from "../../../components/SingleCard/SingleCard";
 
-const CollegeCard = ({ cardToShow }) => {
-  const [cards, setCard] = useState([]);
+const CollegeCard = ({ cardToShow, searchResultData }) => {
+  const [cards, setCards] = useState([]);
+  const [showSearchResults, setShowSearchResults] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/colleges")
+    fetch("https://campus-connect-server-azure.vercel.app/colleges")
       .then((res) => res.json())
       .then((data) => {
-        setCard(data);
+        setCards(data);
       });
   }, []);
+
+  useEffect(() => {
+    setShowSearchResults(searchResultData && searchResultData.length > 0);
+  }, [searchResultData]);
+
   return (
     <div>
       <div className="text-center my-10 px-4 sm:px-8 md:px-16">
@@ -24,9 +29,14 @@ const CollegeCard = ({ cardToShow }) => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {cards.slice(0, cardToShow).map((card) => (
-          <SingleCard key={card._id} card={card}></SingleCard>
-        ))}
+        {/* Conditionally render based on showSearchResults */}
+        {showSearchResults
+          ? searchResultData.map((card) => (
+              <SingleCard key={card._id} card={card} />
+            ))
+          : cards
+              .slice(0, cardToShow)
+              .map((card) => <SingleCard key={card._id} card={card} />)}
       </div>
     </div>
   );

@@ -54,7 +54,7 @@ const Login = () => {
           email: loggedUser.email,
           photo: loggedUser.photoURL,
         };
-        fetch("http://localhost:5000/users", saveUser)
+        fetch("https://campus-connect-server-azure.vercel.app/users", saveUser)
           .then((res) => res.json())
           .then(() => {
             navigate(from, { replace: true });

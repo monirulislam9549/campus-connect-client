@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -24,10 +24,13 @@ const colleges = [
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 const Admission = () => {
   const { user } = useContext(AuthContext);
+  // console.log(user);
   const [selectCategory, setSelectCategory] = useState("");
   const [selectCollege, setSelectCollege] = useState("");
-  const { register, handleSubmit, reset } = useForm();
-  let timerInterval;
+  const { register, handleSubmit } = useForm();
+  const [profile, setProfile] = useState({});
+  const [prevSelected, setPrevSelected] = useState(null);
+
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
   const handleSelectChange = (event) => {
@@ -36,6 +39,15 @@ const Admission = () => {
   const handleSelectCollege = (event) => {
     setSelectCollege(event.target.value);
   };
+
+  useEffect(() => {
+    // Fetch the user's admission data based on their email
+    fetch(`http://localhost:5000/users/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProfile(data);
+      });
+  }, [user]);
 
   const onSubmit = (data) => {
     const formData = new FormData();
@@ -49,6 +61,7 @@ const Admission = () => {
         if (imageData.success) {
           const imageLink = imageData.data.display_url;
           const { name, email, address, phone, subject, college, date } = data;
+          console.log(data);
           const studentInfo = {
             image: imageLink,
             name,
@@ -59,33 +72,45 @@ const Admission = () => {
             college,
             date: new Date(date),
           };
-          // console.log(studentInfo);
+          console.log(studentInfo);
           axios
-            .post("http://localhost:5000/admission", studentInfo)
-            .then((data) => {
-              if (data.data.insertedId) {
-                reset();
+            .post(
+              "https://campus-connect-server-azure.vercel.app/admission",
+              studentInfo
+            )
+            .then((response) => {
+              const data = response.data; // Get the response data
+              if (data.insertedId) {
                 Swal.fire({
-                  title: "Auto close alert!",
-                  html: "Submitted in <b></b> milliseconds.",
-                  timer: 2000,
-                  timerProgressBar: true,
-                  didOpen: () => {
-                    Swal.showLoading();
-                    const b = Swal.getHtmlContainer().querySelector("b");
-                    timerInterval = setInterval(() => {
-                      b.textContent = Swal.getTimerLeft();
-                    }, 100);
-                  },
-                  willClose: () => {
-                    clearInterval(timerInterval);
-                  },
+                  icon: "success",
+                  title: "Submitted successfully",
                 });
               }
-              console.log(data.data.insertedId);
+            })
+            .catch((error) => {
+              if (error.response?.data?.error) {
+                Swal.fire({
+                  icon: "error",
+                  title:
+                    "You are already select the same college and subject. You cannot select the same college and subject twice",
+                  text: error.response.data.error,
+                });
+              } else {
+                Swal.fire({
+                  icon: "error",
+                  title: "Oops....",
+                  text: "Something went wrong. Please try again later.",
+                });
+              }
             });
         }
       });
+  };
+
+  // Disable options that match the previous selection
+  const disablePrevSelected = (option) => {
+    if (prevSelected === null) return false;
+    return prevSelected === option;
   };
   return (
     <div>
@@ -172,13 +197,20 @@ const Admission = () => {
                   <select
                     {...register("subject", { required: true })}
                     value={selectCategory}
-                    onChange={handleSelectChange}
+                    onChange={(event) => {
+                      setPrevSelected(selectCategory);
+                      handleSelectChange(event);
+                    }}
                     type="text"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
                     <option value="">Select Subject</option>
                     {subjects.map((subject) => (
-                      <option key={subject} value={subject}>
+                      <option
+                        key={subject}
+                        value={subject}
+                        disabled={disablePrevSelected(subject)}
+                      >
                         {subject}
                       </option>
                     ))}
@@ -194,13 +226,20 @@ const Admission = () => {
                   <select
                     {...register("college", { required: true })}
                     value={selectCollege}
-                    onChange={handleSelectCollege}
+                    onChange={(event) => {
+                      setPrevSelected(selectCollege);
+                      handleSelectCollege(event);
+                    }}
                     type="text"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
                     <option value="">Select College</option>
                     {colleges.map((college) => (
-                      <option key={college} value={college}>
+                      <option
+                        key={college}
+                        value={college}
+                        disabled={disablePrevSelected(college)}
+                      >
                         {college}
                       </option>
                     ))}

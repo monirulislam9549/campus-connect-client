@@ -4,6 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleNavbar = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -84,6 +85,16 @@ const Navbar = () => {
               <ul className="flex space-x-6">
                 <li>
                   <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive ? "current" : "default"
+                    }
+                  >
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
                     to="/college"
                     className={({ isActive }) =>
                       isActive ? "current" : "default"
@@ -140,10 +151,14 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
-          <Link className="flex justify-center items-center ml-6">
+          <Link
+            to={`/users/${user?.email}`}
+            className="flex justify-center items-center ml-6"
+          >
             <img
               className="h-12 w-12 rounded-full ring-2 ring-white"
               src={user?.photoURL}
+              alt="User Avatar"
             />
             <p className="ml-2 font-medium">{user?.displayName}</p>
           </Link>

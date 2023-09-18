@@ -5,7 +5,7 @@ const CollegeDetails = () => {
   const { id } = useParams();
   const [details, setDetail] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/details/${id}`)
+    fetch(`https://campus-connect-server-azure.vercel.app/details/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setDetail(data);

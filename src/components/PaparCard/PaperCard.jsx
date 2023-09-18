@@ -1,10 +1,10 @@
 const PaperCard = ({ paper }) => {
   const { title, abstract, link, category, publicationDate, authorImg } = paper;
   return (
-    <section className=" body-font overflow-hidden">
+    <section className="body-font overflow-hidden">
       <div className="container px-5 py-5 mx-auto">
         <div className="flex flex-wrap">
-          <div className="items-start bg-blue-50 p-5 rounded">
+          <div className="items-start bg-blue-50 p-5 rounded h-96">
             <span className="inline-block py-1 px-2 rounded bg-red-500 text-white text-opacity-75 tracking-widest font-semibold">
               {category}
             </span>

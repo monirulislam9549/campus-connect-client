@@ -6,6 +6,9 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { ScaleLoader } from "react-spinners";
+
+const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 
 const SignUp = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -13,7 +16,8 @@ const SignUp = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  const { updateUserProfile, createUser } = useContext(AuthContext);
+  const { updateUserProfile, createUser, loading } = useContext(AuthContext);
+  const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
   const {
     reset,
     register,
@@ -22,36 +26,59 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    createUser(data.email, data.password)
-      .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        updateUserProfile(data.name, data.photo).then(() => {
-          const saveUser = {
-            name: data.name,
-            email: data.email,
-            photo: data.photo,
-          };
-          axios
-            .post("http://localhost:5000/users", saveUser)
+    const formData = new FormData();
+    formData.append("image", data.image[0]);
+    fetch(img_hosting_url, {
+      method: "POST",
+      body: formData,
+    })
+      // axios
+      //   .post(
+      //     `https://api.imgbb.com/1/upload?key=${
+      //       import.meta.env.VITE_img_api_Key
+      //     }`,
+      //     formData
+      //   )
+      .then((res) => res.json())
+      .then((imageData) => {
+        if (imageData.success) {
+          const imageLink = imageData.data.display_url;
 
-            .then((res) => {
-              const data = res.data;
-              if (data.insertedId) {
-                reset();
-                navigate(from, { replace: true });
-                Swal.fire({
-                  position: "top-end",
-                  icon: "success",
-                  title: "User created Successfully",
-                  showConfirmButton: false,
-                  timer: 1500,
+          createUser(data.email, data.password).then(() => {
+            // const loggedUser = result.user;
+            // console.log(loggedUser);
+
+            updateUserProfile(data.name, imageLink).then(() => {
+              const user = {
+                name: data.name,
+                email: data.email,
+                image: imageLink,
+              };
+              axios
+                .post(
+                  "https://campus-connect-server-azure.vercel.app/users",
+                  user
+                )
+                .then((res) => {
+                  if (res.data.insertedId) {
+                    reset();
+                    navigate(from, { replace: true });
+                    Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "User created Successfully",
+                      showConfirmButton: false,
+                      timer: 1500,
+                    });
+                  }
+                })
+                .catch((error) => {
+                  console.log(error);
                 });
-              }
             });
-        });
-      })
-      .catch((error) => console.log(error));
+          });
+        }
+      });
   };
 
   const handleTogglePassword = () => {
@@ -195,27 +222,31 @@ const SignUp = () => {
                   )}
                 </div>
               </div>
-              {/* <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Your Image</span>
-                </label>
-                <input
-                  {...register("photo", { required: true })}
-                  type="text"
-                  //   placeholder=""
-                  className="input input-bordered"
-                />
-                {errors.photo && (
-                  <span className="text-red-500">Image is required</span>
-                )}
-              </div> */}
+            </div>
+            <div className="mb-6">
+              <label htmlFor="file" className="block mb-2 text-sm font-medium">
+                Choose Photo
+              </label>
+              <input
+                type="file"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {...register("image", { required: true })}
+              />
             </div>
             <div className="mt-8">
               <button
+                type="submit"
                 role="button"
-                className="bg-blue-400 text-white focus:ring-2 focus:ring-offset-2 text-sm font-semibold leading-non border rounded py-4 w-full"
+                className="bg-blue-400 text-white focus:ring-2 focus:ring-offset-2 text-sm font-semibold leading-non border rounded py-4 w-full relative"
+                // disabled={loading}
               >
-                Create my account
+                {loading ? (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <ScaleLoader height={21} color="#36d7b7" />
+                  </div>
+                ) : (
+                  "Create my account"
+                )}
               </button>
             </div>
           </form>
